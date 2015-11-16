@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仿苹果手机导航按钮</title>
+<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<style>
+body{margin:0;}
+.top{height:100px;background-color:#000; opacity:0.6}
+.btn{ display:inline-block;width:100px;height:100px;text-align:center; opacity:initial}
+.cur,.hover{
+	position:relative;
+	display:inline-block;
+	height:4px;
+	width:35px;
+	margin-top:48px;
+}
+.cur:before,.cur:after,.hover:before,.hover:after{
+	position:absolute;
+	content:"";
+	background-color:#fff;
+	height:100%;
+	width:100%;
+	
+}
+.cur:before{
+	left:0;
+	transform:translateY(-300%);
+	-webkit-transform:translateY(-300%);	
+}
+.cur:after{
+	left:0;
+	transform:translateY(300%);
+	-webkit-transform:translateY(300%);
+}
+.hover{ background-color:transparent;}
+.hover:before{
+	transform:rotate(90deg);
+	-webkit-transform:trotate(90deg);
+}
+.hover:after{
+	transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+</style>
+
+
+</head>
+
+<body>
+<div class="top">
+	<a href="javascript:void(0)" class="btn"><span class="cur"></span></a>
+</div>
+    
+<script src="http://xiaoho.com/wp-content/themes/xiaoho/js/jquery-2.0.2.js"></script>
+<script type="text/javascript">
+$(".btn").click(function(){
+	$("span").toggleClass("hover");
+});
+</script>
+</body>
+</html>
