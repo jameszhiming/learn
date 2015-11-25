@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>情人节demo</title>
+	<link rel="stylesheet" href="css.css" type="text/css"/>
+	<script type="text/javascript" src='jQuery.js'></script>
+	<script type="text/javascript" src='demo.js'></script>
+</head>
+<body>
+	<div id="content">
+		<ul class="content-wrap">
+			<li>页面一</li><!-- 页面一场景 -->
+			<li>页面二</li><!-- 页面二场景 -->
+			<li>页面三</li><!-- 页面三场景 -->
+		</ul>
+	</div>
+	<button class="button">123</button>
+	<script type="text/javascript">
+	//       var container = $("#content");
+ //        // 获取第一个子节点
+ //        var element = container.find(":first");
+ //        // li页面数量
+ //        var slides = element.find("li");
+ //        // 获取容器尺寸
+ //        var width = container.width();
+ //        var height = container.height();
+ //        // 设置li页面总宽度
+ //        element.css({
+ //            width  : (slides.length * width) + 'px',
+ //            height : height + 'px'
+ //        });
+ //        // 设置每一个页面li的宽度
+ //        $.each(slides, function(index) {
+ //            var slide = slides.eq(index); //获取到每一个li元素    
+            
+ //        });
+		var container=$('#content');
+		var element=container.find(":first");
+		var slides=element.find('li');
+		var width=container.width();
+		var height=container.height();
+		element.css({
+			width:(slides.length * width) + 'px',
+   			height : height + 'px'
+		})
+		$.each(slides,function(index){
+			var slide=slides.eq(index);
+			slide.css({
+				width:width + 'px',
+				height:height + 'px'
+			})
+		})
+		$('.button').click(function(){
+			element.css({
+				 'transition-timing-function': 'linear',
+    			 'transition-duration': '5000ms',
+     			 'transform': 'translate3d(-' + (width * 2) + 'px,0px,0px)' //设置页面X轴移动
+			})
+		})
+	</script>
+</body>
+</html>
