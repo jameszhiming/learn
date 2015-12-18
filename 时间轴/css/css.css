@@ -1,0 +1,98 @@
+﻿body{
+	margin: 0;
+	padding:5px;
+	width: 300px;
+	font-family: "宋体";
+}
+.child{
+	margin-left: 10px;
+}
+.s1{
+	line-height: 25px;
+	height: 25px;
+	padding-right: 10px;
+	width:100px;
+    display:table-cell;
+    word-break: break-all;
+    border-right: 2px dashed #999;
+    position: relative;
+ }
+.s2{
+	line-height: 25px;
+	height: 25px;
+	padding-left:10px;
+    width:200px;
+    display:table-cell;
+    word-break:break-all
+}
+.s3{
+	line-height: 25px;
+	font-size: 12px;
+	height: 25px;
+	padding-left:30px;
+    width:200px;
+    display:table-cell;
+    word-break:break-all
+}
+.s3:before{
+	content: '--';
+	margin-left: -10px;
+	border-left: 1px solid;
+	z-index: ;
+}
+#content{
+				border: 1px dotted;
+				width: 100%;
+				
+			}
+			.timer{
+				font-size: 18px;
+				color: #32A2D5;
+				font-weight: bold;
+			}
+			.timer .year{
+				text-align: left;
+				
+			}
+			.timer_m .s1{
+				font-size: 16px;
+				text-align: right;
+				
+			}
+			.content-info{
+				position: relative;
+				font-size: 14px;
+			}
+			.list_info:before{
+				content:'--';
+				margin-left: -5px;
+				z-index: 1;
+			}
+			.img{
+				position:absolute;/*运用绝对布局来设置原点位置*/
+				right: -8px;
+				top: 7px;
+				width: 14px;
+				height: 14px;
+				/*background: url(../img/gray.png) center/14px no-repeat;*/
+				background-image:url(../img/gray.png) ;
+				background-size: 14px;
+				background-position: center;
+				background-repeat: no-repeat;
+				z-index: 99;
+				border: 0px;
+			}
+			.active{
+				position:absolute;
+				right:-9px;
+				top: 7px;
+				width: 16px;
+				height: 16px;
+				/*background: url(../img/black.png) center/14px no-repeat !important;*/
+				background-image: url(../img/gray1.png) !important;
+				background-repeat: no-repeat;
+				background-size: 16px;
+				background-position: center;
+				z-index: 99;
+				border: 0px;
+			}

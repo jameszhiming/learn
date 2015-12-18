@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>aa</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style>
+			#input{
+				border: 1px solid #666666;
+				width: 200px;
+				height: 20px;
+				position: relative;
+		}
+		.input_text{
+			border: 0;
+			width: 100px;
+			position: absolute;
+			left: 0;
+			margin-left: 10px;
+		}
+		.input_info{
+			position: absolute;
+			right: 0;
+			font-size: 10px;
+		}
+		span{
+			font-size: 20px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="input">
+			<input type="text" placeholder="请输入邮箱" class="input_text" id="aa"/>
+			<span id="bb" class="input_info">@126.com</span>
+		</div>
+		<script>
+			window.onload=function(){
+				var a=document.getElementById("aa");
+				var b=document.getElementById("bb");
+				
+				a.onfocus=function(){b.innerText=""};
+				a.onblur=function(){
+				b.innerText=" @126.com"
+				}
+			}
+		</script>
+	</body>
+
+</html>

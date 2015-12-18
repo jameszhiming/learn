@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>圆形</title>
+	</head>
+	<body>
+		<!--//canvas最好不要在css里设置高度，因为css只是内容；后面就是后面很少跟单位-->
+		<canvas id="canvas" width="1024" height="768" style="border: 1px solid; display: block; margin:  0 auto;">
+			当浏览器不支持canvas的时候，显示此内容
+		</canvas>
+		<script>
+		window.onload=function(){
+			var canvas=document.getElementById("canvas");//获得canvas
+			var context=canvas.getContext("2d");
+			context.lineWidth=5;
+			context.strokeStyle="aqua";
+			context.fillStyle='aqua';
+			context.beginPath();//只写begin不写close则不会封闭
+			context.arc(300,300,200,0,0.5*Math.PI,true);
+			context.closePath();//会自动封闭弧形
+			//arc(
+			//	圆心坐标x，圆心坐标y，半径，开始角度，结束角度，顺时针还是逆时针
+			//)
+			context.fill();
+			context.stroke();
+		}
+		</script>
+	</body>
+	
+</html>

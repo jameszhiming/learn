@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html leng='en'>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.6/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<noscript>当浏览器不支持JavaScript的时候</noscript>
+		<script>
+		function validateForm() {
+    		'use strict';//启用严格模式，有更加严格的标准
+		    var email = document.getElementById('email');
+		    var password = document.getElementById('password');
+		
+		    // Validate!
+		    if ( (email.value.length > 0) && (password.value.length > 0) ) {
+		        return true;
+		    } else {
+		        alert('Please complete the form!');
+		        return false;
+		    }
+    
+		} 
+		var loginForm = document.getElementById('loginForm');
+        loginForm.onsubmit = validateForm;</script>//因为onsubmit是loginform的一个属性只能赋值，所以不能加（）加了则表示函数调用
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/css.css">
+		<script type="text/javascript" src="js/jquery.min_v1.0.js" ></script>
+	</head>
+	<body>
+		<table border="0" cellspacing="0" style="border-collapse:collapse;width: 300px; border: 0; border-spacing: 0;">
+			<tr class="timer">
+				<td class="year s1">2015</td>
+				<td class=" null s2"></td>
+			</tr>
+			<tr class="timer_m">
+				<td class="s1">09.01</td>
+				<td class="s2">慢性咽喉炎</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"><span class="img active"></span></td>
+				<td class="s2 list_info">门诊处方11111111111111111111111111</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"><span class="img"></span></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"><span class="img"></span></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"><span class="img"></span></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+			<tr class="timer">
+				<td class="year s1">2015</td>
+				<td class=" null s2"></td>
+			</tr>
+			<tr class="timer_m">
+				<td class="s1">09.01</td>
+				<td class="s2">慢性咽喉炎</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"><span class="img"></span></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+		</table>
+		<script>
+			$('.content-info').click(function(){
+				$('.img').removeClass('active');
+				$(this).children(".s1").children('.img').addClass('active');
+			})
+		</script>
+	</body>
+</html>

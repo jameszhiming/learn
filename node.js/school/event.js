@@ -1,0 +1,39 @@
+var EventEmitter=require('events').EventEmitter;
+var life=new EventEmitter();
+//addEventlistner和on的作用是一样的
+life.on('123',function(who){
+	console.log(who+'ds');
+})
+life.on('123',function(who){
+	console.log(who+'12');
+})
+life.on('123',function(who){
+	console.log(who+'34');
+})
+life.on('123',function(who){
+	console.log(who+'56');
+})
+life.on('123',function(who){
+	console.log(who+'78');
+})
+life.on('123',function(who){
+	console.log(who+'90');
+})
+life.on('123',function(who){
+	console.log(who+'as');
+})
+life.on('123',function(who){
+	console.log(who+'we');
+})
+life.on('123',function(who){
+	console.log(who+'qw');
+})
+life.on('123',function(who){
+	console.log(who+'fr');
+})
+//最多监听十件事情，多于十个可能会导致内存泄露，可以修改十个这个极限通过lefe.setMaxListeners(11)就可设置最大为11
+life.emit('123','蒋志明');
+var berzhi=life.emit('123','蒋志明');//如果有监听事件则为true，没有就是flase
+//不可用lefe.removeListener(‘’，function(){})来移除，要用具名函数，就是具体的函数
+//console.log(life.listeners('123').length)求监听事件的个数
+//lefe.removeAlllisteners()全部移除监听事件，可传值规定移除的函数

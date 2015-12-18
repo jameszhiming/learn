@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/css.css">
+		<script type="text/javascript" src="js/jquery.min_v1.0.js" ></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+			<!--一个时间段就用一个table-->
+			<table  border="0" cellspacing="0" style="border-collapse:collapse;width: 300px; border: 0; border-spacing: 0;" class="select" >
+			<tr class="timer">
+				<td class="year s1">2015</td>
+				<td class=" null s2"></td>
+			</tr>
+			<tr class="timer_m">
+				<td class="s1"><span class="img active"></span>09.01</td>
+				<td class="s2">慢性咽喉炎</td><!--这个是有圆点的-->
+			</tr>
+			<tr class="content-info">
+				<td class="s1"></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"></td>
+				<td class="s2 list_info">门诊处方</td><!--这个是二级菜单栏-->
+				<tr class="content-info">
+				<td class="s1"></td>
+				<td class="s3">hahhahahah</td><!--这个是循环详情的-->
+				</tr>
+			</tr>
+			
+			<tr class="content-info">
+				<td class="s1"></td>
+				<td class="s3">门诊处方详情</td>
+			</tr>
+			<tr class="content-info">
+				<td class="s1"></td>
+				<td class="s2 list_info">门诊处方</td>
+			</tr>
+			</table>
+		
+		<script>
+			$('.select').click(function(){
+				$('.img').removeClass('active');
+				$(this).find(".s1").children('.img').addClass('active');
+			})
+		</script>
+	</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -39,4 +39,21 @@
       <span class="s2">ddddddddfffffffffffffffffffffffdd</span>
     </li>
   </ul>
+  <script>
+  	function test(path){
+			 
+							var arr= path.split(".");
+                           
+								var ns='';
+							for(var i=0;i<arr.length;i++){
+								    alert(arr.length);
+									ns+= arr[i];	 
+							        alert(ns);
+							}
+								 
+						 
+						}
+							test("AAA.bbb");
+						 alert(AAA.bbb); //为啥只能用eval这里才能正常显示对象？
+  </script>
 </body>

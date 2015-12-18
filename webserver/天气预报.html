@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>天气预报</title>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript">
+    
+    // 定义一个xmlhttp对象
+    var request;
+    function createRequest() 
+    {
+      try 
+      {
+         request = new XMLHttpRequest();
+      } 
+      catch (trymicrosoft) 
+      {
+            try 
+            {
+              request = new ActiveXObject("Msxml2.XMLHTTP");
+            } 
+            catch (othermicrosoft) 
+            {
+                  try 
+                  {
+                    request = new ActiveXObject("Microsoft.XMLHTTP");
+                  } 
+                  catch (failed) 
+                  {
+                    request = false;
+                  }
+            }
+      }
+      if (!request)
+        alert("Error initializing XMLHttpRequest!");
+    }
+    
+    // ajax异步调用Webservice
+    function Call(flag) 
+    {
+        
+        
+        // 用http Post方法实现调用
+        if(true==flag)
+        {
+            // 可取相对地址与绝对地址（webService所在的地址）
+            var url = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName";
+            request.open("POST",url, true); 
+            request.setRequestHeader ("Content-Type","application/x-www-form-urlencoded");
+            request.setRequestHeader ("Content-Length",1); // 2即为参数的个数
+			
+             request.onreadystatechange = updatePage;
+             
+             var theCityName=document.getElementById("theCityName").value;
+				//             var strName="mocklystone";
+				//             var strPwd="123";
+             request.send(theCityName); //发送参数的数据，可自行组合
+         }
+         else
+         {
+            // 可取相对地址与绝对地址（webService所在的地址）
+            var url = "LoginService.asmx/HelloWorld";
+            request.open("POST",url, false); 
+            request.setRequestHeader ("Content-Type","application/x-www-form-urlencoded");
+
+            request.onreadystatechange = Show;
+
+            request.send(null); //发送参数的数据，可自行组合
+         }
+    }
+    
+    // 定义回调函数
+    function Show()
+    {
+         if (request.readyState == 4) 
+         {
+              // 状态为200表示调用成功，状态为500表示调用错误
+              
+              if (request.status == 0) 
+              {
+                   var xmlDoc=request.responseXML;
+                   var item= xmlDoc.getElementsByTagName("string"); // 返回类型为string
+                   var data=item[0].firstChild.nodeValue;
+                   alert(data); // 输出得到的值,测试用
+                   
+               } 
+               else
+                 alert("status is " + request.status);
+         }   
+    }
+    
+    function updatePage() 
+    {
+         if (request.readyState == 4) 
+         {
+              // 状态为200表示调用成功，状态为500表示调用错误
+              
+              if (request.status == 0) 
+              {
+                   var xmlDoc=request.responseXML;
+//                 var item= xmlDoc.getElementsByTagName("string"); // 返回类型为string
+//                 var data=item[0].firstChild.nodeValue;
+                   alert(xmlDoc); // 输出得到的值,测试用
+                   
+               } 
+               else
+                 alert("status is " + request.status);
+         }
+    }
+
+    </script>
+
+</head>
+<body onload="createRequest()">
+    <form id="form1" runat="server">
+        	<input name="theCityName" type="TEXT" size="13" id="theCityName">
+        	<input type="submit" value="提交" onclick="Call(true)" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+				var a=0.3-0.2;
+				var b=0.2+0.1;
+				a = parseFloat('0.3')-parseFloat('0.2');
+				window.alert(a);
+				window.alert(b.toPrecision(10));
+				//因为涉及到2进制无法精确表示0.1，所以导致0.2-0.1！=0.1的问题，可用原生toPrecision(10)转换成10进制解决
+				//或用js特性 用字符加减'0.3'-'0.2' 后 用tofixed(1)控制精度输出
+		}
+	</script>
+</html>
